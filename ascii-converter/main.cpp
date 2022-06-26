@@ -23,24 +23,18 @@ int main() {
 	int index;
 
 	int res = 16;
-	while (video.read(frame))
-	{
+	while (video.read(frame)){
+		
 		imshow("frame", frame);
-
-		if (waitKey(25) >= 0)
-		{
+		
+		if (waitKey(25) >= 0){
 			break;
-		}
+		}		
 		
-		
-		for (int x = 0; x < frame.rows; x++)
-		{
-			if (x % res == 0)
-			{
-				for (int y = 0; y < frame. cols; y++)
-				{
-					if (y % res == 0)
-					{
+		for (int x = 0; x < frame.rows; x++){
+			if (x % res == 0){
+				for (int y = 0; y < frame. cols; y++){
+					if (y % res == 0){
 						l = frame.at<uchar>(x, y);
 						index = (b * l) / max;
 						cout << ascii[index] /* << " " */;
@@ -49,7 +43,6 @@ int main() {
 				cout << endl;
 			}		
 		}
-
 		system("cls");
 	}
 	
